@@ -48,5 +48,3 @@ action.pack()
 
 
 root.mainloop()
-
-# /html/body/ytd-app/div/div/ytd-masthead/div[3]/div[2]/ytd-searchbox/form/button
