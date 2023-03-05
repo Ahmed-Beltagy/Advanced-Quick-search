@@ -3,7 +3,9 @@ from selenium.webdriver.common.keys import Keys
 import time
 from tkinter import *
 
-path = "C:\\Program Files (x86)\\chromedriver.exe"
+
+# Add the path to your chromedriver executable file
+path = "chromedriverPath"
 
 root = Tk()
 
@@ -17,12 +19,12 @@ def re_direct_search():
     driver = webdriver.Chrome(path)
     driver.get("https://www.youtube.com/")
     driver.maximize_window()
-    search1 = driver.find_element_by_xpath("/html/body/ytd-app/div/div/ytd-masthead/div[3]/div[2]/ytd-searchbox/form/div/div[1]/input")
+    search1 = driver.find_element_by_xpath("/html/body/ytd-app/div[1]/div/ytd-masthead/div[4]/div[2]/ytd-searchbox/form/div[1]/div[1]/input")
     search1.send_keys(e.get())
-    time.sleep(2)
+    time.sleep(5)
     search_button = driver.find_element_by_id("search-icon-legacy")
     search_button.click()
-    time.sleep(2)
+    time.sleep(3)
 
     driver.execute_script("window.open('');")
     driver.switch_to.window(driver.window_handles[1])
@@ -30,7 +32,7 @@ def re_direct_search():
     search = driver.find_element_by_name("q")
     search.send_keys(e.get())
     search.send_keys(Keys.RETURN)
-    time.sleep(2)
+    time.sleep(3)
 
     driver.execute_script("window.open('');")
     driver.switch_to.window(driver.window_handles[2])
@@ -38,7 +40,7 @@ def re_direct_search():
     search = driver.find_element_by_name("q")
     search.send_keys(e.get())
     search.send_keys(Keys.RETURN)
-    time.sleep(2)
+    time.sleep(3)
 
 
 action = Button(root, text="SEARCH", command=re_direct_search)
